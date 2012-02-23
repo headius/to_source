@@ -7,10 +7,11 @@ Ruby IDEs. It adds #to_ast to String and the resulting
 AST (a tree of org.jrubyparser.ast.Node subclasses) has
 a #to_source method.
 
-This library could be safely used from native Ruby
-implementations as well by calling through RJB, though
-I have not tested that my use of Java APIs is 100%
-compatible with RJB.
+This library works from RJB as well, though I have not
+done much testing there. RJB does not appear to be able
+to decorate an individual Java class (and cascade to its
+subclasses) so instead we just open the one RJB proxy
+superclass.
 
 jrubyparser is at https://github.com/jruby/jruby-parser
 
